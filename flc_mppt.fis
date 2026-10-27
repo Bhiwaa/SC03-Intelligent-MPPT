@@ -1,0 +1,69 @@
+[System]
+Name='flc_mppt'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='E'
+Range=[-32 4.75]
+NumMFs=5
+MF1='NB':'trimf',[-32 -32 -16]
+MF2='NS':'trimf',[-32 -16 0]
+MF3='ZE':'trimf',[-16 0 2.375]
+MF4='PS':'trimf',[0 2.375 4.75]
+MF5='PB':'trimf',[2.375 4.75 4.75]
+
+[Input2]
+Name='CE'
+Range=[-6 6]
+NumMFs=5
+MF1='NB':'trimf',[-6 -6 -3]
+MF2='NS':'trimf',[-6 -3 0]
+MF3='ZE':'trimf',[-3 0 3]
+MF4='PS':'trimf',[0 3 6]
+MF5='PB':'trimf',[3 6 6]
+
+[Output1]
+Name='dD'
+Range=[-0.018 0.018]
+NumMFs=5
+MF1='NB':'trimf',[-0.018 -0.018 -0.009]
+MF2='NS':'trimf',[-0.018 -0.009 0]
+MF3='ZE':'trimf',[-0.009 0 0.009]
+MF4='PS':'trimf',[0 0.009 0.018]
+MF5='PB':'trimf',[0.009 0.018 0.018]
+
+[Rules]
+1 1, 5 (1) : 1
+2 1, 5 (1) : 1
+3 1, 3 (1) : 1
+4 1, 3 (1) : 1
+5 1, 2 (1) : 1
+1 2, 5 (1) : 1
+2 2, 4 (1) : 1
+3 2, 3 (1) : 1
+4 2, 2 (1) : 1
+5 2, 2 (1) : 1
+1 3, 5 (1) : 1
+2 3, 4 (1) : 1
+3 3, 3 (1) : 1
+4 3, 2 (1) : 1
+5 3, 1 (1) : 1
+1 4, 4 (1) : 1
+2 4, 4 (1) : 1
+3 4, 3 (1) : 1
+4 4, 2 (1) : 1
+5 4, 1 (1) : 1
+1 5, 4 (1) : 1
+2 5, 3 (1) : 1
+3 5, 3 (1) : 1
+4 5, 1 (1) : 1
+5 5, 1 (1) : 1
